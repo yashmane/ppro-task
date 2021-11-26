@@ -1,0 +1,8 @@
+mysqlRootPassword: okok123
+
+mysqlDatabase: pprotask
+
+persistence:
+  enabled: false
+
+

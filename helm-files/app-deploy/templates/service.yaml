@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "ppro-task-helloworld.fullname" . }}
+  namespace: {{ .Values.nameSpace }}
+  labels:
+    app: {{ template "ppro-task-helloworld.name" . }}
+    chart: {{ template "ppro-task-helloworld.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+      name: http                   
+  selector:
+    app: {{ template "ppro-task-helloworld.name" . }}
+    release: {{ .Release.Name }}

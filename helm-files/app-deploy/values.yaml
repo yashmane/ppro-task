@@ -1,0 +1,30 @@
+# Default values for searchms.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates..
+
+nameOverride: ppro-task-helloworld
+
+replicaCount: 1
+
+image: 
+  repository: yashmane/pprotask
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 4000
+  targetPort: 4000
+
+containerPort: 4000
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 100Mi
+
+
+

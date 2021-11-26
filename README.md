@@ -33,13 +33,12 @@ tar -zxvf helm-v3.0.0-linux-amd64.tar.gz
 ```sh
 mv linux-amd64/helm /usr/local/bin/helm
 ```
-
 - Clone the GitHub repo.
 ```sh
 https://github.com/yashmane/ppro-task.git
 ```
 
-- Execute the bash script() to deploy the resources to kubernetes cluster.
+- Execute the bash script(deploy.sh) to deploy the resources to kubernetes cluster.
 ```sh
 chmod 777 deploy.sh
 ./deploy.sh
@@ -49,7 +48,5 @@ chmod 777 deploy.sh
 ```sh
 minikube service ppro-task-helloworld --url
 or
-curl http://localhost:4000/
-or 
-curl http://<service-ip>:4000/
+curl http://service-ip:4000/
 ```
