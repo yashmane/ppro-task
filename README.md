@@ -34,13 +34,9 @@ tar -zxvf helm-v3.0.0-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/helm
 ```
 
-- Add the stable repo to deploy database.
-```sh
-helm repo add stable https://charts.helm.sh/stable
-```
-
 - Clone the GitHub repo.
 ```sh
+https://github.com/yashmane/ppro-task.git
 ```
 
 - Execute the bash script() to deploy the resources to kubernetes cluster.
@@ -51,5 +47,9 @@ chmod 777 deploy.sh
 
 - Once the above script is completed, use the following command to make an HTTP resquest.
 ```sh
+minikube service ppro-task-helloworld --url
+or
 curl http://localhost:4000/
+or 
+curl http://<service-ip>:4000/
 ```
