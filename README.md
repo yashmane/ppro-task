@@ -8,12 +8,12 @@ This is the solution for the DevOps task.
 https://minikube.sigs.k8s.io/docs/start/
 ```
 
-- Start your DEV cluster.
+- Deploy DEV cluster.
 ```sh
 minikube start
 ```
 
-- Start your PROD cluster.
+- Deploy PROD cluster.
 ```sh
 minikube start -p minikubeprod
 ```
@@ -63,7 +63,7 @@ kubectl config use-context minikube
 kubectl get po
 ```
 
-- Use the following command to make an HTTP resquest.
+- Use the following commands for HTTP resquest.
 ```sh
 minikube service ppro-task-helloworld --url (Leave the terminal as it is).
 Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
@@ -86,7 +86,7 @@ kubectl config use-context minikubeprod
 kubectl get po
 ```
 
-- Use the following command to make an HTTP resquest.
+- Use the following commands for HTTP resquest.
 ```sh
 minikube service ppro-task-helloworld --url (Leave the terminal as it is).
 Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
