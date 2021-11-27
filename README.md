@@ -8,14 +8,19 @@ This is the solution for the DevOps task.
 https://minikube.sigs.k8s.io/docs/start/
 ```
 
-- Start your cluster
+- Start your DEV cluster.
 ```sh
 minikube start
 ```
 
-- verifying cluster deployment.
+- Start your PROD cluster.
 ```sh
-kubectl get pods -A
+minikube start -p minikubeprod
+```
+
+- verifying cluster deployment(Here you can see two kubernetes clusters).
+```sh
+kubectl config get-contexts
 ```
 
 - Installing Helm.
@@ -33,20 +38,59 @@ tar -zxvf helm-v3.0.0-linux-amd64.tar.gz
 ```sh
 mv linux-amd64/helm /usr/local/bin/helm
 ```
+
+- Add the stable repo to deploy database.
+```sh
+helm repo add stable https://charts.helm.sh/stable
+```
+
 - Clone the GitHub repo.
 ```sh
 https://github.com/yashmane/ppro-task.git
 ```
 
-- Execute the bash script(deploy.sh) to deploy the resources to kubernetes cluster.
+#### FOR DEV
+- Execute the bash script(deploy-dev.sh) to deploy the resources to DEV kubernetes cluster.
 ```sh
-chmod 777 deploy.sh
-./deploy.sh
+chmod 777 deploy-dev.sh
+./deploy-dev.sh
 ```
 
-- Once the above script is completed, use the following command to make an HTTP resquest.
+- To check the DEV deployments.
 ```sh
-minikube service ppro-task-helloworld --url
-or
-curl http://service-ip:4000/
+kubectl config get-contexts
+kubectl config use-context minikube
+kubectl get po
 ```
+
+- Use the following command to make an HTTP resquest.
+```sh
+minikube service ppro-task-helloworld --url (Leave the terminal as it is).
+Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
+OR
+curl http://service-ip:<nodeport>/ (From another terminal).
+```
+
+#### FOR PROD
+
+- Execute the bash script(deploy-prod.sh) to deploy the resources to PROD kubernetes cluster.
+```sh
+chmod 777 deploy-prod.sh
+./deploy-prod.sh
+```
+
+- To check the PROD deployments.
+```sh
+kubectl config get-contexts
+kubectl config use-context minikubeprod
+kubectl get po
+```
+
+- Use the following command to make an HTTP resquest.
+```sh
+minikube service ppro-task-helloworld --url (Leave the terminal as it is).
+Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
+OR
+curl http://service-ip:<nodeport>/ (From another terminal).
+```
+
