@@ -63,7 +63,7 @@ kubectl config use-context minikube
 kubectl get po
 ```
 
-- Use the following commands for HTTP resquest.
+- Use the following commands for HTTP request.
 ```sh
 minikube service ppro-task-helloworld --url (Leave the terminal as it is).
 Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
@@ -86,7 +86,7 @@ kubectl config use-context minikubeprod
 kubectl get po
 ```
 
-- Use the following commands for HTTP resquest.
+- Use the following commands for HTTP request.
 ```sh
 minikube service ppro-task-helloworld --url (Leave the terminal as it is).
 Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
