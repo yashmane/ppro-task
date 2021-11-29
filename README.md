@@ -52,6 +52,7 @@ https://github.com/yashmane/ppro-task.git
 #### FOR DEV
 - Execute the bash script(deploy-dev.sh) to deploy the resources to DEV kubernetes cluster.
 ```sh
+cd ppro-task
 chmod 777 deploy-dev.sh
 ./deploy-dev.sh
 ```
@@ -66,7 +67,7 @@ kubectl get po
 - Use the following commands for HTTP request.
 ```sh
 minikube service ppro-task-helloworld --url (Leave the terminal as it is).
-Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
+Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above command) in browser.
 OR
 curl http://service-ip:<nodeport>/ (From another terminal).
 ```
@@ -89,7 +90,7 @@ kubectl get po
 - Use the following commands for HTTP request.
 ```sh
 minikube service ppro-task-helloworld --url (Leave the terminal as it is).
-Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above coommand) in browser.
+Open http://127.0.0.1:<nodeport>/(nodeport is mentioned in the output of above command) in browser.
 OR
 curl http://service-ip:<nodeport>/ (From another terminal).
 ```
